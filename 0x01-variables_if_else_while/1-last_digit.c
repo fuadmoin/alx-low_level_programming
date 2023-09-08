@@ -10,11 +10,11 @@
 /* betty style doc for function main goes there */
 int main(void)
 {
-int n;
+int n, last;
 
 srand(time(0));
 n = rand() - RAND_MAX / 2;
-int last = n % 10;
+last = n % 10;
 if (n % 10 < 6 && n % 10 != 0)
 printf("Last digit of %d is %d and is less than 6 and not 0\n", n, last);
 if (n % 10 == 0)
