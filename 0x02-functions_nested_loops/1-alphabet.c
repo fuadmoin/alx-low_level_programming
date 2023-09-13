@@ -7,7 +7,7 @@
  * Return: Always 0.
  */
 
-print_alphabet(void)
+void print_alphabet()
 {
 char starter = 'a';
 while (starter <= 'z')
