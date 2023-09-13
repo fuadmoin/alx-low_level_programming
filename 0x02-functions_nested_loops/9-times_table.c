@@ -8,30 +8,34 @@
 
 void times_table(void)
 {
-int i, j, product;
+int outernumbers, innnernumbers, product, modules, result;
 
-for (i = 0; i <= 9; i++)
+for (outernumbers = 0; outernumbers <= 9; outernumbers++)
 {
-for (j = 0; j <= 9; j++)
+for (innnernumbers = 0; innnernumbers <= 9; innnernumbers++)
 {
-product = i * j;
-if (product >= 10)
+product = outernumbers * innnernumbers;
+if (product > 9)
 {
-_putchar((product / 10) + '0');
-_putchar((product % 10) + '0');
+modules = product % 10;
+result = (product - modules) / 10;
+_putchar(44);
+_putchar(32);
+_putchar(result + '0');
+_putchar(modules + '0');
 }
 else
 {
-_putchar(' ');
+if (innnernumbers != 0)
+{
+_putchar(44);
+_putchar(32);
+_putchar(32);
+}
 _putchar(product + '0');
 }
-if (j < 9)
-{
-_putchar(',');
-_putchar(' ');
-}
 }
 _putchar('\n');
 }
-_putchar('\n');
+
 }
