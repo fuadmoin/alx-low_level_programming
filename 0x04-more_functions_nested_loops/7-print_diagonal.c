@@ -21,5 +21,6 @@ _putchar('\\');
 _putchar('\n');
 i++;
 }
+if (n <= 0)
 _putchar('\n');
 }
