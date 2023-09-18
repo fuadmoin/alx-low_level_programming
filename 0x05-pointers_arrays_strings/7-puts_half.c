@@ -17,7 +17,7 @@ if (len % 2 == 1)
 middle = ((len - 1) / 2) + 1;
 else
 middle = len / 2;
-for (i = middle; middle < len ; i++)
+for (i = middle; i < len ; i++)
 _putchar(str[i]);
 _putchar('\n');
 }
