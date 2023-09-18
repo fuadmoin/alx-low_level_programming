@@ -13,10 +13,10 @@ while (*str != '\0')
 {
 len++;
 }
-if (len % 2 == 1)
-middle = ((len - 1) / 2) + 1;
-else
+if (len % 2 == 0)
 middle = len / 2;
+else
+middle = (len + 1) / 2;
 for (i = middle; i < len ; i++)
 _putchar(str[i]);
 _putchar('\n');
