@@ -11,50 +11,40 @@
 
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-int i, j, k, l, m, n;
-int carry = 0;
-int val_n1, val_n2, sum;
-i = strlen(n1);
-j = strlen(n2);
-if (i > size_r || j > size_r)
-return (0);
-r[size_r] = '\0';
-k = size_r - 1;
-for (--i, --j; i >= 0 && j >= 0; i--, j--, k--)
-{
-val_n1 = n1[i] - '0';
-val_n2 = n2[j] - '0';
-sum = val_n1 + val_n2 + carry;
-carry = sum / 10;
-r[k] = (sum % 10) + '0';
-}
-while (i >= 0)
-{
-sum = n1[i] - '0' + carry;
-carry = sum / 10;
-r[k] = (sum % 10) + '0';
+int i = 0, j = 0, o = 0, d = 0, v1 = 0, v2 = 0, t = 0;
+while (*(n1 + i) != '\0')
+i++;
+while (*(n2 + j) != '\0')
+j++;
 i--;
-k--;
-}
-while (j >= 0)
-{
-sum = n2[j] - '0' + carry;
-carry = sum / 10;
-r[k] = (sum % 10) + '0';
 j--;
-k--;
-}
-if (carry > 0)
-{
-if (k < 0)
+if (i >= size_r || i >= size_r)
 return (0);
-r[k] = carry + '0';
-}
-if (k >= 0)
+while (j >= 0 || i >= 0 || o == 1)
 {
-for (l = k, m = 0; l <= size_r - 1; l++, m++)
-r[m] = r[l];
-r[m] = '\0';
+if (i < 0)
+v1 = 0;
+else
+v1 = *(n1 + i) -'0';
+if (j < 0)
+v2 = 0;
+else
+v2 = *(n2 + j) -'0';
+t = v1 + v2 + o;
+if (t >= 10)
+o = 1;
+else
+o = 0;
+if (d >= (size_r - 1))
+return (0);
+*(r + d) = (t % 10) + '0';
+d++;
+i--;
+j--;
 }
+if (d == size_r)
+return (0);
+*(r + d) = '\0';
+rev_string(r);
 return (r);
 }
