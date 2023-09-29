@@ -18,7 +18,7 @@ return (is_prime_helper(n, n - 1));
 
 /**
  * is_prime_helper - checks if the number is prime.
- * @n: integer
+ * @num: integer
  * @i: integer
  * Return: method
  */
