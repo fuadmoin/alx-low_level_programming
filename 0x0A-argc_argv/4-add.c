@@ -3,14 +3,18 @@
 #include <stdlib.h>
 
 /**
- * main - multiplies two numbers.
+ * is_number - checks if a string is a number.
  * @str: the first pointer
  * Return: zero
  */
 
-int is_number(char *str) {
-for (int i = 0; str[i] != '\0'; i++) {
-if (str[i] < '0' || str[i] > '9') {
+int is_number(char *str)
+{
+int i = 0;
+for (; str[i] != '\0'; i++)
+{
+if (str[i] < '0' || str[i] > '9')
+{
 return (0);
 }
 }
@@ -26,8 +30,8 @@ return (1);
 
 int main(int argc, char *argv[])
 {
-int sum = 0;
-for (int i = 1; i < argc; i++)
+int sum = 0, i = 1;
+for (; i < argc; i++)
 {
 if (!is_number(argv[i]))
 {
