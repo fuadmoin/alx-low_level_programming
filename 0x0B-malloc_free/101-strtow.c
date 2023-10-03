@@ -9,20 +9,31 @@
 
 int count_words(char *str)
 {
-int i, count = 0;
+int inside_word, char_index, word_count;
 
-for (i = 0; str[i]; i++)
-if ((str[i] == ' ' || str[i + 1] == '\0') && str[i] != ' ')
-count++;
+inside_word = 0;
+word_count = 0;
 
-return (count);
+for (char_index = 0; str[char_index] != '\0'; char_index++)
+{
+if (str[char_index] == ' ')
+inside_word = 0;
+else if (inside_word == 0)
+{
+inside_word = 1;
+word_count++;
+}
 }
 
+return (word_count);
+}
+
+
 /**
- * strtow - concatenates all the arguments of the program.
- * @str: the first pointer
- * Return: pointer
- */
+* strtow - concatenates all the arguments of the program.
+* @str: the first pointer
+* Return: pointer
+*/
 
 char **strtow(char *str)
 {
