@@ -26,41 +26,43 @@ return (count);
 
 char **strtow(char *str)
 {
-char **words;
-int i, j, k, l, count;
+char **word_array, *word;
+int i, word_index = 0, str_len = 0, word_count;
+int char_count = 0, word_start, word_end;
 
-if (str == NULL || *str == '\0')
+while (*(str + str_len))
+str_len++;
+word_count = count_words(str);
+if (word_count == 0)
 return (NULL);
 
-count = count_words(str);
-words = malloc(sizeof(char *) * (count));
-if (words == NULL)
+word_array = (char **) malloc(sizeof(char *) * (word_count + 1));
+if (word_array == NULL)
 return (NULL);
 
-for (i = 0, l = 0; i < count; i++)
+for (i = 0; i <= str_len; i++)
 {
-while (str[l] == ' ')
-l++;
-
-for (j = l; str[j] != ' ' && str[j]; j++)
-;
-
-words[i] = malloc(sizeof(char) * (j - l + 1));
-if (words[i] == NULL)
+if (str[i] == ' ' || str[i] == '\0')
 {
-for (; i >= 0; i--)
-free(words[i]);
-free(words);
+if (char_count)
+{
+word_end = i;
+word = (char *) malloc(sizeof(char) * (char_count + 1));
+if (word == NULL)
 return (NULL);
+while (word_start < word_end)
+*word++ = str[word_start++];
+*word = '\0';
+word_array[word_index] = word - char_count;
+word_index++;
+char_count = 0;
+}
+}
+else if (char_count++ == 0)
+word_start = i;
 }
 
-for (k = 0; l < j; l++, k++)
-words[i][k] = str[l];
+word_array[word_index] = NULL;
 
-words[i][k] = '\0';
-}
-
-words[i] = NULL;
-
-return (words);
+return (word_array);
 }
