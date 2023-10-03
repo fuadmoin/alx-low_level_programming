@@ -33,7 +33,7 @@ if (str == NULL || *str == '\0')
 return (NULL);
 
 count = count_words(str);
-words = malloc(sizeof(char *) * (count + 1));
+words = malloc(sizeof(char *) * (count));
 if (words == NULL)
 return (NULL);
 
