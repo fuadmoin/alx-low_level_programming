@@ -34,7 +34,7 @@ long num1, num2, product;
 if (argc != 3 || !_isdigit(argv[1]) || !_isdigit(argv[2]))
 {
 printf("Error\n");
-return (1);
+exit(98);
 }
 
 num1 = atol(argv[1]);
