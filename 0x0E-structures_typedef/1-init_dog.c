@@ -6,6 +6,7 @@
  * @d: the pointer to the struct
  * @name: the name of the dog
  * @age: the age of the dog
+ * @owner: the owner of the dog
  * Return: Always 0.
  */
 
