@@ -11,7 +11,6 @@
 int main(int argc, char **argv)
 {
 int (*op_func)(int, int);
-int num1, num2, result;
 
 if (argc != 4)
 {
