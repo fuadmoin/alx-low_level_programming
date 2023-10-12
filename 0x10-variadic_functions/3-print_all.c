@@ -36,8 +36,6 @@ continue;
 }
 sep = ", ";
 i++;
-if (format[i])
-printf(", ");
 }
 
 va_end(args);
