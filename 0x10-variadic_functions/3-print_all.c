@@ -14,7 +14,7 @@ va_start(args, format);
 
 while (format && format[i])
 {
-switch (format[i++])
+switch (format[i])
 {
 case 'c':
 printf("%s%c", sep, va_arg(args, int));
@@ -35,6 +35,7 @@ default:
 continue;
 }
 sep = ", ";
+i++;
 if (format[i])
 printf(", ");
 }
