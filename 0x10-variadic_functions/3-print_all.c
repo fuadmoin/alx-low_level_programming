@@ -8,7 +8,7 @@ void print_all(const char * const format, ...)
 {
 va_list args;
 int i = 0;
-char *s;
+char *s, *sep = "";
 
 va_start(args, format);
 
@@ -17,25 +17,24 @@ while (format && format[i])
 switch (format[i++])
 {
 case 'c':
-printf("%c", va_arg(args, int));
+printf("%s%c", sep, va_arg(args, int));
 break;
 case 'i':
-printf("%d", va_arg(args, int));
+printf("%s%d", sep, va_arg(args, int));
 break;
 case 'f':
-printf("%f", va_arg(args, double));
+printf("%s%f", sep, va_arg(args, double));
 break;
 case 's':
 s = va_arg(args, char *);
-if (s == NULL)
-printf("(nil)");
-else
-printf("%s", s);
+if (!s)
+s = "(nil)";
+printf("%s%s", sep, s);
 break;
 default:
 continue;
 }
-
+sep = ", ";
 if (format[i])
 printf(", ");
 }
