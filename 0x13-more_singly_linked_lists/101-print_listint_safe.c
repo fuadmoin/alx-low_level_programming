@@ -48,8 +48,8 @@ return (0);
 }
 
 /**
- * print_list_safe - Prints a listint_t list safely.
- * @list_head: A pointer to the head of the listint_t list.
+ * print_listint_safe - Prints a listint_t list safely.
+ * @head: A pointer to the head of the listint_t list.
  *
  * Return: The number of nodes in the list.
  */
