@@ -53,18 +53,18 @@ return (0);
  *
  * Return: The number of nodes in the list.
  */
-size_t print_list_safe(const listint_t *list_head)
+size_t print_listint_safe(const listint_t *head)
 {
 size_t node_count, counter = 0;
 
-node_count = calculate_loop_length(list_head);
+node_count = calculate_loop_length(head);
 
 if (node_count == 0)
 {
-for (; list_head != NULL; node_count++)
+for (; head != NULL; node_count++)
 {
-printf("[%p] %d\n", (void *)list_head, list_head->n);
-list_head = list_head->next;
+printf("[%p] %d\n", (void *)head, head->n);
+head = head->next;
 }
 }
 
@@ -72,11 +72,11 @@ else
 {
 for (counter = 0; counter < node_count; counter++)
 {
-printf("[%p] %d\n", (void *)list_head, list_head->n);
-list_head = list_head->next;
+printf("[%p] %d\n", (void *)head, head->n);
+head = head->next;
 }
 
-printf("-> [%p] %d\n", (void *)list_head, list_head->n);
+printf("-> [%p] %d\n", (void *)head, head->n);
 }
 
 return (node_count);
