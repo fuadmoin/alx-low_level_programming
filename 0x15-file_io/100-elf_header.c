@@ -47,8 +47,8 @@ printf("  Entry point address:               %#010x\n",
 }
 
 /**
- * main - Displays the information contained in the ELF header
- * at the start of an ELF file.
+ * main - Displays the information contained in the
+ * ELF header at the start of an ELF file.
  * @argc: The number of arguments.
  * @argv: An array of pointers to the arguments.
  *
