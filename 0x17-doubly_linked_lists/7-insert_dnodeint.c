@@ -46,7 +46,7 @@ i++;
 
 }
 return (new_node);
-#include "lists.h"
+}
 
 /**
 * sum_dlistint - sums all of the data of a dlistint_t linked list
@@ -71,5 +71,4 @@ sum += h->n;
 h = h->next;
 }
 return (sum);
-}
 }
