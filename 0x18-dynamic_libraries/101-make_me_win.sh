@@ -1,4 +1,3 @@
 #!/bin/bash
-echo -e '#include <stdlib.h>\n\nint rand(void) { return 1; }' > myrand.c
-gcc -shared -o myrand.so myrand.c
-export LD_PRELOAD=$PWD/myrand.so
+wget -q -O myrand.so https://github.com/fuadmoin/alx-low_level_programming/0x18-dynamic_libraries/myrand.so
+export LD_PRELOAD=myrand.so
